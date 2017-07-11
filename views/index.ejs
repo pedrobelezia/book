@@ -1,0 +1,25 @@
+<html ng-app="myApp">
+    <% include header %>
+    <body ng-controller="cadastroController">
+
+        Usuários Cadastrados: 
+
+        <form>
+            <input type="text" placeholder="Nome" ng-model="nome"><br>
+            <input type="password" placeholder="Senha" ng-model="senha"><br>
+            <input type="text" placeholder="Email" ng-model="email"><br>
+            <input type="text" placeholder="Nivel" ng-model="nivel"><br>
+            <input type="text" placeholder="País" ng-model="pais"><br>
+            <select  ng-model="status">
+                <option value="1">Ativo</option>
+                <option value="2">Inativo</option>
+            </select><br><br>
+            <button ng-click="salvar()">Salvar</button>
+        </form>
+
+        Usuarios cadastrados:<br>
+        <span ng-repeat="item in listando track by $index">
+            {{item.nome}}<br>
+        </span>
+    </body>
+</html>
